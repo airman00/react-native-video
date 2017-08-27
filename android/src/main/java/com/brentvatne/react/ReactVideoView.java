@@ -493,6 +493,7 @@ public class ReactVideoView extends ScalableVideoView implements MediaPlayer.OnP
             super.seekTo(msec);
             if (isCompleted && mVideoDuration != 0 && msec < mVideoDuration) {
                 isCompleted = false;
+                start(); // Eric: I added this in to make it work
             }
         }
     }
